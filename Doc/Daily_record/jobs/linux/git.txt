@@ -1,3 +1,15 @@
+0.git的基本使用.
+	0_1.新建一个文件并推送到服务器
+		1).touch readme.txt
+		2).git add readme.txt
+		3).git commit -m "readme"
+		4).git remote add origin git@xxx.xxx.xxx.xxx:/home/git/project.git
+		5).git push origin master
+
+	0_2_2.git的基本使用技巧:
+		git pull git@10.10.10.11:/home/git/project.git
+		git push origin master
+
 1.git客户端初始化配置:
 	1).用户信息:
 	安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 
