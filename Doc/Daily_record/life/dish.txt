@@ -1,7 +1,7 @@
 早餐:
-	1.汤面
-	2.炒年糕
-	3.皮蛋瘦肉粥
+	1.西红柿鸡蛋面(https://www.xiachufang.com/recipe/104495995/)
+	2.炒年糕(https://www.xiachufang.com/recipe/105891041/)
+	3.皮蛋瘦肉粥(https://www.xiachufang.com/recipe/104044597/)
 	4.面片汤(https://www.xiachufang.com/recipe/104640035/)
 	5.鲜肉小混沌(https://www.xiachufang.com/recipe/104680926/)
 	6.鸡蛋卷(https://www.xiachufang.com/recipe/103706541/),薄一点,多卷几次
