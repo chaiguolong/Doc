@@ -93,3 +93,7 @@
 	2).Gcommit命令,写注释提交文件
 	3).Gpull拉取文件,保持一致性
 	4).Gpush推送文件到服务器
+
+4.git每次push都要输入账号密码
+	git config --global credential.helper store
+	git pull /git push (这里需要输入用户名和密码，以后就不用啦)
