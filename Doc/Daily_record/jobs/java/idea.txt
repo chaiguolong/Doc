@@ -9,3 +9,4 @@
 	8).自动生成代码,toString,get,set等方法: Ctrl + enter
 	9).打开最近的文件: Command + e
 	10).隐藏工具窗口: Command + H
+	11).更改所有变量: 选中变量,Shift + F6
