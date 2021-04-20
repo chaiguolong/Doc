@@ -561,6 +561,190 @@
     |                                                                                 |
     |   }                                                                             |
     +---------------------------------------------------------------------------------+
+20.6.练一练
+一.填空题
+	1.在Java中要进行IO操作,需要导入(java.io)包.
+	2.Java中的数据操作主要分为(读)和(写)两个种类.
+	3.生成File对象的构造方法为(File(path));
+二.简答题
+	在操作文件流时,是按照怎样的方式进行的?
+	答:1).使用File类找到一个文件.
+	   2).通过File类的对象去实例化字节流或字符流的子类
+	   3).进行字节(字符)的读写操作.
+	   4).关闭文件流.
+20.7. 跟我上机
+	编写一个程序,向文件中写入"Here is my file",并从文件中读出字符串.
+     +---------------------------------------------------------------------------------------+
+     |  import java.io.*;                                                                    |
+     |  public class homework_20 {                                                           |
+     |      public static void main(String[] args) {                                         |
+     |          File f = new File("/Users/develop/Documents/Doc/Daily_record/test/Here.txt");|
+     |          writeFile(f);                                                                |
+     |          readFile(f);                                                                 |
+     |      }                                                                                |
+     |                                                                                       |
+     |      public static void readFile(File f){                                             |
+     |          FileInputStream in = null;                                                   |
+     |          try {                                                                        |
+     |              in = new FileInputStream(f);                                             |
+     |          } catch(FileNotFoundException e){                                            |
+     |              System.out.println(e.getMessage());                                      |
+     |          }                                                                            |
+     |          byte b[] = new byte[1024];                                                   |
+     |          int len = 0;                                                                 |
+     |          try {                                                                        |
+     |              len = in.read(b);                                                        |
+     |          } catch(IOException e){                                                      |
+     |              System.out.println(e.getMessage());                                      |
+     |          }                                                                            |
+     |          System.out.println(new String(b,0,len));                                     |
+     |                                                                                       |
+     |          try {                                                                        |
+     |              in.close();                                                              |
+     |          } catch(IOException e){                                                      |
+     |              e.printStackTrace();                                                     |
+     |          }                                                                            |
+     |      }                                                                                |
+     |                                                                                       |
+     |                                                                                       |
+     |                                                                                       |
+     |      public static void writeFile(File f){                                            |
+     |          FileOutputStream out = null;                                                 |
+     |          try {                                                                        |
+     |              out = new FileOutputStream(f);                                           |
+     |          } catch(FileNotFoundException e){                                            |
+     |              e.printStackTrace();                                                     |
+     |          }                                                                            |
+     |          try {                                                                        |
+     |              out.write("Here is my file".getBytes());                                 |
+     |          } catch(IOException e){                                                      |
+     |              System.out.println(e.getMessage());                                      |
+     |          }finally{                                                                    |
+     |              try {                                                                    |
+     |                  out.close();                                                         |
+     |              } catch(IOException e){                                                  |
+     |                  System.out.println(e.getMessage());                                  |
+     |              }                                                                        |
+     |          }                                                                            |
+     |      }                                                                                |
+     |  }                                                                                    |
+     +---------------------------------------------------------------------------------------+
+22.7.练一练
+一.填空题
+	1.在Java中,Socket对象的两个关键方法是(getInputStream())和(getOutputStream());
+	2.Socket的两种主要操作方式是(面向连接的)和(面向无连接的);
+	3.互联网常见的通讯协议有(TCP)和(UDP);
+	4.在Java中,所有的网络开发包保存在(net)包中.
+二.简答题
+	简述网络程序开发的两种架构.
+	答:C/S架构:有客户端和服务端,需要两套代码,而且都需要维护.较为繁琐.
+	   B/S架构:客户端为浏览器,只需要一套代码,而且也只需维护一套,较为简单.
+22.8. 跟我上机
+	编写一个服务器端/客户端程序,对客户端输入的字符串,服务器端以"客户端:"开头在返回.
+      +-------------------------------------------------------------------------------------------------+
+      | import java.io.*;                                                                               |
+      | import java.net.*;                                                                              |
+      | public class homework_Server22 {                                                                |
+      |     public static void main(String[] args) throws Exception {                                   |
+      |         //创建一个监听端口(9000)的服务端的socket                                                |
+      |         ServerSocket server = new ServerSocket(9999);                                           |
+      |         //声明一个客户端的socket                                                                |
+      |         Socket client;                                                                          |
+      |         //返回客户端的socket                                                                    |
+      |         System.out.println("服务端正在等待连接......");                                         |
+      |         client = server.accept();                                                               |
+      |         BufferedReader buf = new BufferedReader(new InputStreamReader(client.getInputStream()));|
+      |         PrintStream pout = new PrintStream(client.getOutputStream());                           |
+      |         boolean flag = true;                                                                    |
+      |         while (flag) {                                                                          |
+      |             String str = buf.readLine();                                                        |
+      |             if(str == null || "".equals(str)){                                                  |
+      |                 flag = false;                                                                   |
+      |                 break;                                                                          |
+      |             }                                                                                   |
+      |             if("bye".equalsIgnoreCase(str)){                                                    |
+      |                 flag = false;                                                                   |
+      |                 break;                                                                          |
+      |             }                                                                                   |
+      |                                                                                                 |
+      |             pout.println("客户端: " + str);                                                     |
+      |         }                                                                                       |
+      |                                                                                                 |
+      |         pout.close();                                                                           |
+      |         buf.close();                                                                            |
+      |         client.close();                                                                         |
+      |         server.close();                                                                         |
+      |     }                                                                                           |
+      |                                                                                                 |
+      | }                                                                                               |
+      +-------------------------------------------------------------------------------------------------+
+
+      +------------------------------------------------------------------------------------------------+
+      | import java.io.*;                                                                              |
+      | import java.net.*;                                                                             |
+      | public class homework_Client22 {                                                               |
+      |     public static void main(String[] args) throws Exception {                                  |
+      |         Socket client = new Socket("localhost", 9999);                                         |
+      |         BufferedReader input = new BufferedReader(new InputStreamReader(System.in));           |
+      |         BufferedReader buf = null;                                                             |
+      |         buf = new BufferedReader(new InputStreamReader(client.getInputStream()));              |
+      |         PrintStream out = new PrintStream(client.getOutputStream());                           |
+      |         boolean flag = true;                                                                   |
+      |         while (flag) {                                                                         |
+      |             System.out.println("请输入要发送的内容: ");                                        |
+      |             //发送要请求的内容                                                                 |
+      |             String str = input.readLine();                                                     |
+      |             if(str == null || "".equals(str)){                                                 |
+      |                 flag = false;                                                                  |
+      |                 break;                                                                         |
+      |             }                                                                                  |
+      |             if("bye".equalsIgnoreCase(str)){                                                   |
+      |                 flag = false;                                                                  |
+      |                 break;                                                                         |
+      |             }                                                                                  |
+      |                                                                                                |
+      |             out.println(str);                                                                  |
+      |             //接收回应的内容                                                                   |
+      |             System.out.println(buf.readLine());                                                |
+      |         }                                                                                      |
+      |         client.close();                                                                        |
+      |     }                                                                                          |
+      |                                                                                                |
+      | }                                                                                              |
+      +------------------------------------------------------------------------------------------------+
+23.12.练一练
+一.填空题
+	1.Oracle数据库的端口号为(1521).
+	2.(prepareStatement())方法可以进行数据库的更新操作.
+	3.PreparedStatement类为(Statement)类的子类.
+	4.增加新数据的sql语句命令是(insert into person(name, age) values ("张三", 20);)
+二.简答题
+	1.简述Oracle的端口号及地址信息.
+	答:Oracle的端口号为:1521,地址信息为:jdbc:oracle:thin@localhost:1521:orcl,
+	其中地址头为:jdbc:oracle:thin@;localhost为ip地址;1521位端口;orcl为数据库;
+	2.在事务处理过程中,为什么要通过setAutocommit方法关闭自动更新?这样做有什么好处?
+	答:方便回滚操作.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
