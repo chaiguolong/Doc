@@ -57,6 +57,7 @@
     这句法来自ksh93,并被移植到现代的外壳一样bash，zsh，pdksh，busybox sh
 7>.在Linux中，目录名和文件名中包含空格当然是合法的
 8>.linux中出现在终端划鼠标滚轮出现乱码,可以输入reset命令,然后回车.
+9>.centos8中安装jdk要安装devel版本,不然没有javac,jar等命令
 
 
 
