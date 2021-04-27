@@ -431,8 +431,130 @@
        |                                                           |
        |    }                                                      |
        +-----------------------------------------------------------+
+16.6 练一练
+一.填空题
+	1. 当将一个不兼容的对象加入类集中时,将产生(classCastErrorException)异常.
+	2. (Collection)接口是构造类集框架的基础
+	3. 调用(first())方法,可以获得集合中的第一个对象.
+	4. 需要获得集合尾部的一个子集合,可以使用(tailSet())方法
+二.简答题
+	简述ArrayList的构造方法.
+	答: 1). ArrayList(): 构造一个空的数组列表;
+		2). ArrayList(int capacity): 建立一个数组列表,该数组有指定的初始容量,容量是用于存储元素的基本数组大小.
+		3). ArrayList(Collect c): 建立一个数组列表,该数组列表由类c中的元素初始化.
+16.7 跟我上机
+	编写一段程序,使用TreeSet类存储以下元素:3, 6, 9, 7, 18, 25,并输出其元素.
+17.7 练一练
+一. 填空题
+	1. 在定义枚举的过程中,使用关键字(enum)进行定义.
+	2. 在枚举类中,将全部内容设置到集合的方法是(allof());
+二. 简答题
+	1. 简述什么是枚举?
+	答: 枚举是一个被命名的整型常数的集合.
+	2. 简述枚举类与枚举关键字的区别.
+	答: 枚举关键字是定义枚举类型时必不可少的声明,而枚举类则是规定的枚举类型的母类.
+17.8 跟我上机
+
+  +-------------------------------------+		
+  | public enum homework01_17 {         |
+  |     MONDAY{                         |
+  |         return "星期一";            |
+  |     },                              |
+  |     TUESDAY{                        |
+  |         public String getDay(){     |
+  |             return "星期二";        |
+  |         }                           |
+  |     },                              |
+  |     WEDNESDAY{                      |
+  |         return "星期三";            |
+  |     };                              |
+  |                                     |
+  |     public abstract String getDay();|
+  |                                     |
+  | }                                   |
+  +-------------------------------------+
 
 
+  +------------------------------------+
+  | public enum homework01_17 {        |
+  |     MONDAY{                        |
+  |         public String getDay(){    |
+  |             return "星期一";       |
+  |         }                          |
+  |     },                             |
+  |     TUESDAY{                       |
+  |         public String getDay(){    |
+  |             return "星期二";       |
+  |         }                          |
+  |     },                             |
+  |     WEDNESDAY{                     |
+  |         public String getDay(){    |
+  |             return "星期三";       |
+  |         }                          |
+  |     };                             |
+  |                                    |
+  |     public abstract String getDay()|
+  |                                    |
+  | }                                  |
+  +------------------------------------+
+18.7 练一练
+一. 填空题
+	1. 在JDK1.5之后哦,系统中内建的3个Annotation分别为(Override),(Deprecated),(Suppresswarnnings).
+	2. 定义一个名称为"firsttip"的Annotation的语句为(public @interface firsttip{};).
+二. 简答题
+	简述在RetentionPolicy中规定的3个作用范围.
+	答: 1).只在源代码起作用: public static final RetentionPolicy SOURCE.
+		2).只在编译之后的class起作用: public static final RetentionPolicy CLASS.
+		3).在运行时的时候起作用: public static final RetentionPolicy RUNTIME.
+19.8 练一练
+一.填空题
+	1. 多线程的优点为(可以同时运行多个程序块);
+	2. 返回线程的优先级的方法为(getPriority());
+	3. 死锁形成的原因为(多个线程或进程,要争用对多个锁的独占访问);
+二. 简答题
+	1. 简述线程和进程的主要差别.
+	答: 1).线程是的比进程更小的执行单元.
+		2).进程的内存是独立的,线程的内存是共享的.
+	2. 简述激活线程的方法.
+	答: 1).线程必须扩展自Thread类,使自己成为它的子类.
+		2).线程的处理必须编写在run方法内.
+19.9 跟我上机
+	编写一个多线程处理的程序,其他线程运行10秒后,使用main方法终端其他线程.
+      +-------------------------------------------------------------+
+      | class TestThread  implements Runnable{                      |
+      |     public void  run(){                                     |
+      |         System.out.println(Thread.currentThread().getName() |
+      |                 +"在运行...");                              |
+      |     }                                                       |
+      | }                                                           |
+      | public class homework01_19 {                                |
+      |     public static void main(String[] args) {                |
+      |         TestThread t = new TestThread();                    |
+      |         new Thread(t).start();                              |
+      |         try {                                               |
+      |             Thread.sleep(10000);                            |
+      |         } catch(Exception e){                               |
+      |             e.printStackTrace();                            |
+      |         }                                                   |
+      |         Thread.interrupted();                               |
+      |         System.out.println("main 在运行....");              |
+      |     }                                                       |
+      |                                                             |
+      | }                                                           |
+      +-------------------------------------------------------------+
+20.6 练一练
+一.填空题
+	1. 在Java中要进行IO操作,需要导入(IO)包.
+	2. Java中的数据操作主要分为(字节)和(字符)两种.
+	3.生成File对象的构造方法为(File(String path)).
+二.简答题
+	在操作文件流时,是按照怎样的方式进行的?
+	答: 1).使用File类找到一个文件.
+		2).通过File对象生成流对象.
+		3).用流对象对文件进行读写操作.
+		4).关闭流.
+20.7 跟我上机
+	编写一个程序,向文件中写入"Here is my file", 并从文件中读出字符串.
 
 
 

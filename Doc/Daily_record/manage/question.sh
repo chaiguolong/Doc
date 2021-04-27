@@ -21,3 +21,6 @@
 18.查看randomAccessFile的API,查看各方法的不同.
 19.为什么非静态内部类不能定义静态属性/静态方法/和静态内部类.
 20.用static声明的内部类变成了外部类,但是用static声明的内部类不能访问非static得外部类属性.
+21.HashSet是否有序.
+22.什么是Set
+23.InputStreamReader用于将一个字节流中的字节解码成字符,outputStreamWriter用于将写入的字符编码车成字节后写入一个字节流.
