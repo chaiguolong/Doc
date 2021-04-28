@@ -12,7 +12,7 @@ public class EchoClient {
 		BufferedReader in = null;
 
 		try {
-			clientsocket = new Socket("localhost", 1111);
+			clientsocket = new Socket("127.0.0.1", 1111);
 			in = new BufferedReader(new InputStreamReader(clientsocket.getInputStream()));
 			out = new PrintWriter(clientsocket.getOutputStream(), true);
 		} catch(UnknownHostException e){
