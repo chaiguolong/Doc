@@ -24,3 +24,4 @@
 21.HashSet是否有序.
 22.什么是Set
 23.InputStreamReader用于将一个字节流中的字节解码成字符,outputStreamWriter用于将写入的字符编码车成字节后写入一个字节流.
+24.什么时候该捕获异常,什么时候该抛异常.
