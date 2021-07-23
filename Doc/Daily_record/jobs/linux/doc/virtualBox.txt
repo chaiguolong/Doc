@@ -1,0 +1,29 @@
+1. virtualbox挂载目录失败mount: unknown filesystem type ‘vboxsf’
+	解决方法安装VirtualBox增强工具
+	0. 先安装必要的包:执行下面的命令:
+		> 1. yum install -y gcc gcc-devel gcc-c++ gcc-c++-devel make kernel kernel-devel
+		> 2. 安装完重启虚拟机
+			shutdown -r now
+	1. 打开mac os => /Applications/VirtualBox.app/Contents/MacOS
+	2. 找到VBoxGuestAdditions.iso 加载到虚拟机
+		> 1. 点击设置-->存储-->控制器IDE
+		> 2. 点击左边第一个小按钮(添加虚拟光驱)
+		> 3. 选择VBoxGuestAdditions.iso
+	3. 在虚拟机当中执行(先cd 到/media,然后mkdir cdrow,最后给777权限)
+		sudo mount /dev/sr0 /media/cdrom
+	4. cd /media/cdrom/ && sh ./VBoxLinuxAdditions.run
+	5. reboot虚拟机即可.
+2. 在Virtualbox中与主机共享文件夹
+	1)完成👆(上面)的步骤是关键.
+	2).点击虚拟机 设置-->选择共享文件夹
+	3).设置共享文件夹
+		> 1.选择路径
+		> 2.填写自定义的共享名称(后面需要与挂载路径相对于.
+			这很重要!!!,我这里是名称是test),这里填的是名称,
+			不是路径,路径在上一步选择.
+		> 3.设置自动挂载/固定分配.
+	4).挂载共享文件夹
+		切换到root用户输入挂载命令:
+		sudo mount -t vboxsf test /mnt/test
+		##上面命令中test是步骤2中的名称;后面的/mnt/test是挂载目录,
+		##需要先创建目录,赋予权限777,才能挂载.
