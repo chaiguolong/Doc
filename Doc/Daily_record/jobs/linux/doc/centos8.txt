@@ -158,3 +158,9 @@
 
     5).在线扩容所挂载目录的内容.
         [root@DNS ~]#xfs_growfs /dev/mapper/cl-root
+4.卸载源码安装的软件
+	解压并进入你的源码所在目录：
+	./configure
+	sudo make uninstall
+
+
