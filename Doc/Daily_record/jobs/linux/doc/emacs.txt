@@ -34,6 +34,18 @@
 	33).C-x o: 从一个窗口切换到另一个窗口.
 	34).C-x 0(数字0): 关闭当前窗口.
 	35).C-x 1(数字1): 关闭除当前窗口外的所有窗口.
+	36).C-c C-t: 将当前栏目切换为TODO/DONE
+	37).C-c C-s: 将agenda设置开始日期
+	38).C-c C-d: 将agenda设置结束日期
+	39).Dired:	+: to create directory
+				C-x C-f: to create file
+				g: to refresh dired buffer
+				C: copy file
+				R: rename file
+				d: delete file(标记要删除的文件)
+				x: 执行所选的文档(是否删除)
+				D: delete after confirm
+				u: 取消标记
 
 2.块剪切: 
 	1).移动光标到待剪切区域的起始位置并按下C-@或C-Spacebar键,
