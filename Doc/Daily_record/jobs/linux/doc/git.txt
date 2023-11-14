@@ -142,4 +142,8 @@
 	-->个人令牌-->重新生成令牌,注意复制令牌到文本文件中,因为刷新
 	页面后就无法显示了.然后在各客户端重新git push 下,密码用刚才的
 	个人令牌.
-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
+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
+
+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
+
+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
