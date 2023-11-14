@@ -59,6 +59,12 @@
 8>.linux中出现在终端划鼠标滚轮出现乱码,可以输入reset命令,然后回车.
 9>.centos8中安装jdk要安装devel版本,不然没有javac,jar等命令
 10>.htop命令:显示cpu,内存等信息
+11>.Homebrew长期没有更新,导致本地证书过期解决办法:
+	1>.echo insecure >> ~/.curlrc
+	2>.HOMEBREW_CURLRC=1
+	3>.export HOMEBREW_CURLRC
+	4>.brew install git
+
 
 
 
