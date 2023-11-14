@@ -38,6 +38,8 @@
 			 再按一次,将光标所在的行移动至屏幕顶部;
 			 再按一次,将光标所在的行移动至屏幕底部.
 	37).c-x s: 保存多个缓冲区.
+	38).c-z: evil模式和Emacs模式切换.
+	39).c-j: 对光标之前进行取值.
 
 2.复制粘贴:
     1).把光标移动到区域的首字符
@@ -47,3 +49,11 @@
     5).用光标定位将要粘贴内容的地方，然后键入C-y ，拷贝成功。
 3.emacs内置的中文教程:打开emacs,输入快捷键c-u c-h t,然后选择Chinese-GB18030
 4.emacs使配置生效:M-x eval-buffer
+14. 在半马人的emacs配置中添加插件evil.
+	1.在init.el文件添加文本(require 'init-evil)
+	2.新建文件lisp/init-evil.el,内容如下:
+		(use-package evil
+			:ensure t
+			:hook (after-init . evil-mode))
+		(provide 'init-evil)
+	3.重启emacs
