@@ -14,7 +14,8 @@ IPv6的回环地址是 0:0:0:0:0:0:0:1,表示为压缩格式为::1
 5.du -sh * | sort -nr	#查看目录下每个文件夹占用多少磁盘空间.
 6.defaults write com.google.Keystone.Agent checkInterval 0修改chrome更新时间
 7.zsh向前删除一个单词快捷键c-w
-<<<<<<< HEAD
 =======
 8.终端清屏:Command + k
->>>>>>> 2bafaa940020e48a96f8324d58b53f0ca85f704e
+9.快速定位到词典:Spotlight 输入单词后按快捷键 Command + L 可以快速定位到字典那一项.
+10.books中阅读图书时,option+space是下一页;shift+space是上一页
+11.在命令行翻译单词(安装了软件,据说有chatgpt):fanyi word

@@ -1,0 +1,2 @@
+password: qgTJ1SdTkmGy
+port: 29276
