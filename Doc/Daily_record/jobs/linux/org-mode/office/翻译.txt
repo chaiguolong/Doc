@@ -82,3 +82,11 @@
 	此外,任何带有可见性('VISIBILITY')属性的条目,根据其属性相应地调整他们的可见性.
 	允许的属性值为‘folded’, ‘children’, ‘content’, and ‘all’.
 
+	c-u C-u TAB (org-set-startup-visibility)
+	(恢复默认值)切换回缓冲区的启动可见性，即各个条目中的启动选项和 "VISIBILITY "属性所要求的可见性。
+
+2.2.3 捕捉隐形编辑
+	有时,您可能会无意中编辑缓冲区中不可见的部分,并对已编辑的内容和如何撤销错误感到困惑.
+	将 org-fold-catch-invisible-edits 设置为非零有助于避免这种情况
+	请参阅此选项的文档说明,了解Org应如何捕捉并处理不可见编辑
+
