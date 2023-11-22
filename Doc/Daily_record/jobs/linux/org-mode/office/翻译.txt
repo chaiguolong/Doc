@@ -89,4 +89,101 @@
 	有时,您可能会无意中编辑缓冲区中不可见的部分,并对已编辑的内容和如何撤销错误感到困惑.
 	将 org-fold-catch-invisible-edits 设置为非零有助于避免这种情况
 	请参阅此选项的文档说明,了解Org应如何捕捉并处理不可见编辑
+2.2.3 捕获不可见的编辑
+	有时,您可能会无意中编辑缓冲区的不可见部分,并对已编辑的内容以及如何撤消错误感到困惑.
+	设置org-fold-catch-invisible-edits为 non-nil有助于防止这种情况.
+	请参阅此选项的文档字符串,了解 Org 应如何捕获不可见的编辑并处理它们。
+
+2.3 移动
+	以下命令跳转到缓冲区中的其他标题。
+
+	C-c C-n( org-next-visible-heading ) 
+	下一个标题
+
+	C-c C-p( org-previous-visible-heading ) 
+	上一个标题
+
+	C-c C-f( org-forward-heading-same-level ) 
+	下一个标题相同级别
+
+	C-c C-b( org-backward-heading-same-level ) 
+	上一个标题相同级别
+
+	C-c C-u( outline-up-heading ) 
+	向后至更高级别的标题
+
+	C-c C-j( org-goto ) 
+	(将当前文档锁住,不让更改)跳转到不同的位置而不改变当前轮廓的可见性。
+	显示临时缓冲区中的文档结构，您可以在其中使用以下键来查找目的地：
+
+	TAB    循环可见性。
+	DOWN/UP    下一个/上一个可见标题。
+	RET    选择这个位置。
+	/    进行稀疏树搜索
+
+	若是关闭了 org-goto-auto-isearch ，以下命令可用
+
+	n/p		下一个/上一个可见标题。
+	f/b		下一个/上一个标题同一级别。
+	u		上升一级。
+	0……9    数字参数
+	q		退出
+
+2.4 结构编辑
+	M-RET( org-meta-return ) 
+	插入新标题,项目或行
+	如果在行的开头使用该命令,并且该处有标题或普通列表项（请参阅普通列表）,则将在当前行之前创建新标题/项.
+	当在常规文本行的开头使用时，将该行变成标题
+	当在行的中间使用此命令时，该行将被拆分，该行的其余部分将成为新项目或标题.
+	使用C-u前缀调用该命令会无条件地在当前子树的末尾插入一个新标题,从而保留其内容.
+	使用双C-u C-u前缀时,新标题将在父子树的末尾创建
+
+	C-RET( org-insert-heading-respect-content ) 
+	在当前子树的末尾插入新标题
+
+	M-S-RET( org-insert-todo-heading ) 
+	插入与当前标题相同级别的新 TODO 条目.
+
+	C-S-RET( org-insert-todo-heading-respect-content ) 
+	插入与当前标题相同级别的新 TODO 条目(效果同M-RET与C-RET).
+
+	TAB( org-cycle ) 
+	在还没有文本的新条目中,第一个TAB条目会将条目降级为前一个条目的子条目.
+	下一个 TAB使其成为父级,依此类推,一直到顶层.再过一次TAB,你就回到了最初的水平.
+
+	M-LEFT( org-do-promote ) 
+	M-RIGHT( org-do-demote )
+	将当前标题提升或降低一级
+
+	M-S-LEFT( org-promote-subtree ) 
+	M-S-RIGHT( org-demote-subtree )
+	将当前子树提升/降低一级
+
+	M-UP(org-move-subtree-up) 
+	M-DOWN(org-move-subtree-down)
+	将子树向上/向下移动，即与前一个同级子树交换。
+
+
+
+2.5 稀疏树
+	一个很重要的特性就是org有能力为被选中的信息构造出稀疏树,使得被选中信息突出显示,无关信息折叠显示.
+	实践才是检测真理的唯一标准，试一试就知道具体是怎样优化你的工作了。
+
+	Org-mode包含了许多命令来创建这些稀疏树,所有这些命令都能通过调度器被访问.
+
+	C-c / (org-sparse-tree)
+	这会提示输入一个额外的按键,用来选择创建稀疏树的命令
+
+	C-c / r 或者 C-c / /(org-occur)
+	提示输入正则表达式(请参阅正则表达式)并显示包含所有匹配项的稀疏树.
+	如果匹配项位于标题中,则标题将可见.如果匹配项位于条目正文中,则标题和正文将可见.
+	为了提供最少的上下文,还显示了匹配到上方标题的完整层次结构以及匹配下方的标题.
+	每个匹配也会突出显示,当通过编辑命令或按C-c C-c更改缓冲区时,高亮显示消失.
+	当使用C-u前缀参数调用时,先前的突出显示将被保留,因此对此命令的多次调用可以堆叠
+
+	M-g n或者M-g M-n（next-error）
+	跳转到该缓冲区中的下一个稀疏树匹配。
+
+	M-g p或者M-g M-p（previous-error）
+	跳转到该缓冲区中的上一个稀疏树匹配
 
