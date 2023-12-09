@@ -1,0 +1,6 @@
+1.Firefox弹窗提示更新可以通过以下步骤关闭：
+	编辑文件/Applications/Firefox.app/Contents/Resources/defaults/pref/channel-prefs.js
+	将下列代码
+	pref("app.update.channel", "release");
+	替换为
+	pref("app.update.channel", "");
