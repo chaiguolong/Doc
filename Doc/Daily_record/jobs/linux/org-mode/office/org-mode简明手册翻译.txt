@@ -1,3 +1,60 @@
-1.引言:
+1.简介:
 	org是一种用于记笔记,维护TODO列表和通过快速和有效的文字系统来规划项目计划模式.
 	也是一个创作和发布系统,它支持使用源代码来文字编程和可复制的研究工作.
+
+	安装
+	重要提示:如果您使用的Org版本是Emacs发行版的一部分,请跳过本节并直接转到激活.
+
+	激活:
+	将以下行添加到Emacs初始化文件中,为三个命令定义全局键,这些命令在任何Emacs缓冲区(而不仅仅是Org缓冲区)中都有用.请自行选择合适的按键.
+		(global-set-key (kbd "C-c l") #'org-store-link)
+		(global-set-key (kbd "C-c a") #'org-agenda)
+		(global-set-key (kbd "C-c c") #'org-capture)')')')
+	扩展名为'.org'的文件将自动进入org模式.
+
+2.文档结构
+	Org是一个大纲.大纲允许以层次结构组织文档,至少对我来说,这是笔记和想法的最佳表示.
+	该结构的概览是通过折叠来实现的,即隐藏文档的大部分内容以仅显示一般文档结构和当前正在处理的部分.
+	Org通过将整个显示和隐藏功能压缩到与键(TAB)绑定的单个命令(org-cycle)中,极大地方便了大纲的用法(使用TAB键)
+	
+	2.1标题
+	标题定义大纲树的结构.Org中的标题从左边距带有一颗或多颗星号开始,后跟一个空格.
+	例如:
+
+		* Top level headline
+		** Second level
+		*** Third level
+			some text
+		*** Third level
+			more text
+		* Another top level headline
+
+	请注意,标题在org-footnote-section命名之后,默认为'脚注',被认为是特殊的.具有此标题的子树将被导出函数默默地忽略.
+	有些人发现许多星号太嘈杂,并且更喜欢空白后跟一个星号作为标题开头的大纲.请参阅杂项以了解实现这一点的设置.
+
+	2.2能见度循环
+	概要让隐藏缓存区中的部分文本称为可能.Org仅使用两个命令(TAB)和(S-TAB)来改变缓冲区的可见性.
+
+	TAB
+	子树循环：在下列状态之间旋转当前子树
+
+	,-> FOLDED(折叠) -> CHILDREN(孙树) -> SUBTREE(子树) --.
+	'-----------------------------------------------------'
+
+	S-TAB
+	C-u TAB
+	全局循环：在下列状态之间旋转整个缓冲区
+
+	,-> OVERVIEW(概述) -> CONTENTS(目录) -> SHOW ALL(显示全部) --.
+	'------------------------------------------------------------'
+
+	C-u C-u C-u TAB
+	显示全部，包括抽屉。
+
+	当Emacs第一次访问Org文件时,全局状态设置为OVERVIEW,即只有顶级标题可见.
+	这可以通过变量进行配置org-startup-folded,或者在每个文件的基础上添加'STARTUP'关键字到
+	'overview','content','showall'或者 'showeverything’ or ‘show<n>levels’ (n = 2..5)
+	例如:
+
+		#+STARTUP: content
+
