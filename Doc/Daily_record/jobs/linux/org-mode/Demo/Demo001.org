@@ -37,3 +37,14 @@ hello3
 hello4
 ******* head6
 hello5
+
+
+* table1
+
+| Name  | Phone | Age |
+|-------+-------+-----|
+| john  |   134 |  30 |
+|-------+-------+-----|
+| lilei |   137 | 27  |
+
+* table2
