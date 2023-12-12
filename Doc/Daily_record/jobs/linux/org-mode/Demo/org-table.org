@@ -1,0 +1,6 @@
+# TAB, RET and |
+
+| expense | price |
+| bar     |    12 |
+| food    |    21 |
+
