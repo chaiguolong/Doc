@@ -1,6 +1,15 @@
-# TAB, RET and |
 
-| expense | price |
-| bar     |    12 |
-| food    |    21 |
+| Name  | phone | age |
+| John  |   123 |  20 |
+| jerry |   123 |  34 |
+| rose  |    44 |  20 |
 
+
+| Name | Phone | age |
+| John |   123 |  20 |
+| rose |    33 |  20 |
+
+
+| Name | Phone | age |
+| John |    33 |  24 |
+| rose |    33 |  20 |

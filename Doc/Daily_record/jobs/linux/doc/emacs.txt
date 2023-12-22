@@ -37,7 +37,8 @@
 	36).C-c C-t: 将当前栏目切换为TODO/DONE
 	37).C-c C-s: 将agenda设置开始日期
 	38).C-c C-d: 将agenda设置结束日期
-	39).Dired:	+: to create directory
+	39).Dired(需要用m键mark相应的文件):
+				+: to create directory
 				C-x C-f: to create file
 				g: to refresh dired buffer
 				C: copy file
@@ -56,11 +57,9 @@
 	45).C-l: 重新绘制屏幕,将光标所在行移动至屏幕中间;
 			 再按一次,将光标所在的行移动至屏幕顶部;
 			 再按一次,将光标所在的行移动至屏幕底部.
-<<<<<<< HEAD
 	37).c-x s: 保存多个缓冲区.
 	38).c-z: evil模式和Emacs模式切换.
 	39).c-j: 对光标之前进行取值.
-=======
 	46).c-x s: 保存多个缓冲区.
 	47).c-z: evil模式和Emacs模式切换.
 	48).c-j: 对光标之前进行取值.
@@ -81,6 +80,7 @@
 	55).C-x C-v:读取另一个文件来代替刚才读入的那一个文件.
 	56).C-x i:把一个文件插入另一个文件(移动到适当的位置)
     57).g: 在Dired模式中强制刷新.
+	58).C-j 计算最后的符号表达式(sexps<symbolic expressions>)
 
 
 2.复制粘贴:

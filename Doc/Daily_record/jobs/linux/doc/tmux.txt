@@ -5,6 +5,7 @@ Ctrl+b    ?    显示快捷键帮助文档
 Ctrl+b    d    断开当前会话
 Ctrl+b    D    选择要断开的会话
 Ctrl+b    Ctrl+z    挂起当前会话
+Ctrl d			退出Tmux窗口
 Ctrl+b    r    强制重载当前会话
 Ctrl+b    s    显示会话列表用于选择并切换
 Ctrl+b    :    进入命令行模式，此时可直接输入ls等命令
