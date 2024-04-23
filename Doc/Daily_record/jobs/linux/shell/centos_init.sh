@@ -2,15 +2,15 @@
 #!/bin/bash
 #
 #**************************************************
-#Author:                dream
-#QQ:                    584238433
-#Email:                 584238433@qq.com
+#Author:                Xan_Yum
+#QQ:                    7993167
+#Email:                 waluna@qq.com
 #Version:               1.0
-#Date:                  2024-04-22
+#Date:                  2021-11-03
 #FileName:              init_v1.sh
 #Description:           system init
-#URL:                   https://blog.dream.top
-#Copyroght (C):         2024 ALL rights reserved
+#URL:                   https://blog.waluna.top
+#Copyroght (C):         2021 ALL rights reserved
 #**************************************************
 
 OS=`awk -F'"' '/PRETTY_NAME/{print $2}' /etc/os-release|tr ' ' '-'`
@@ -73,6 +73,7 @@ set expandtab
 set ignorecase
 set cursorline
 set autoindent
+colorscheme murphy
 autocmd BufNewFile *.sh exec ":call SetTitle()"
 func SetTitle()
     if expand("%:e")=='sh'
