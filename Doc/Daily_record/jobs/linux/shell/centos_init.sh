@@ -2,15 +2,15 @@
 #!/bin/bash
 #
 #**************************************************
-#Author:                Xan_Yum
-#QQ:                    7993167
-#Email:                 waluna@qq.com
+#Author:                dream
+#QQ:                    584238433
+#Email:                 584238433@qq.com
 #Version:               1.0
-#Date:                  2021-11-03
+#Date:                  2024-04-22
 #FileName:              init_v1.sh
 #Description:           system init
-#URL:                   https://blog.waluna.top
-#Copyroght (C):         2021 ALL rights reserved
+#URL:                   https://blog.dream.top
+#Copyroght (C):         2024 ALL rights reserved
 #**************************************************
 
 OS=`awk -F'"' '/PRETTY_NAME/{print $2}' /etc/os-release|tr ' ' '-'`
@@ -79,14 +79,14 @@ func SetTitle()
     call setline(1,"#!/bin/bash")
     call setline(2,"#")
     call setline(3,"#**************************************************")
-    call setline(4,"#Author:                Xan_Yum")
-    call setline(5,"#QQ:                    7993167")
-    call setline(6,"#Email:                 waluna@qq.com")
+    call setline(4,"#Author:                dream")
+    call setline(5,"#QQ:                    584238433")
+    call setline(6,"#Email:                 584238433@qq.com")
     call setline(7,"#Version:               1.0")
     call setline(8,"#Date:                  ".strftime("%Y-%m-%d"))
     call setline(9,"#FileName:              ".expand("%"))
     call setline(10,"#Description:           The test script")
-    call setline(11,"#URL:                   https://blog.waluna.top")
+    call setline(11,"#URL:                   https://blog.dream.top")
     call setline(12,"#Copyroght (C):         ".strftime("%Y")." ALL rights reserved")
     call setline(13,"#**************************************************")
     endif
