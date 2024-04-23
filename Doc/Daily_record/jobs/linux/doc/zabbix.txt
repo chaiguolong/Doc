@@ -1,0 +1,16 @@
+1.安装zabbix_4.4.1的yum仓库:
+	1).下载zabbix(4.4.1)rpm包,系统版本为cento7.
+	命令:
+		wget https://mirrors.aliyun.com/zabbix/zabbix/4.4/rhel/7/x86_64/zabbix-release-4.4-1.el7.noarch.rpm
+
+	在阿里镜像https://developer.aliyun.com/mirror/zabbix/中的
+	下载地址https://mirrors.aliyun.com/zabbix/中找到对应的rpm包
+	(网址为:https://mirrors.aliyun.com/zabbix/zabbix/4.4/rhel/7/x86_64/?spm=a2c6h.25603864.0.0.26967be43QWQSR
+	链接地址为:https://mirrors.aliyun.com/zabbix/zabbix/4.4/rhel/7/x86_64/zabbix-release-4.4-1.el7.noarch.rpm).
+	
+	2).安装yum仓库
+		yum -ivh zabbix-release-4.4-1.el7.noarch.rpm
+
+	3).将源更改为aliyun.
+		sed -i 's/repo.zabbix.com/mirrors.aliyun.com\/zabbix/g' /etc/yum.repos.d/zabbix.repo
+	
