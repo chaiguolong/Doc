@@ -20,6 +20,11 @@ web_06=10.10.10.26
 web_07=10.10.10.27
 web_08=10.10.10.28
 web_virtualBox=127.0.0.1
+#下列虚拟机采用的是桥接模式,主机必须连上外网,且虚拟机和主机的ip需在同一网段
+web_centos7u601=192.168.0.201
+web_centos7u602=192.168.0.202
+web_centos7u603=192.168.0.203
+web_centos7u604=192.168.0.204
 
 while true; do
 	clear
@@ -41,6 +46,11 @@ while true; do
 	|           13.本地虚拟机centos7u604  |
 	|           q.退出                    |
 	+-------------------------------------+
+
+警告:
+虚拟机(centos7u6系列主机)采用的是桥接模式
+主机必须连上外网,且虚拟机和主机的ip需在同一网段
+
 	EOF
 
 	read  -p "请输入选定的数字: " num
@@ -73,16 +83,16 @@ while true; do
 			ssh -p 6666 dream@${web_virtualBox}
 			;;
 		10)
-			ssh -p 7777 dream@${web_virtualBox}
+			ssh   dream@${web_centos7u601}
 			;;
 		11)
-			ssh -p 8888 dream@${web_virtualBox}
+			ssh   dream@${web_centos7u602}
 			;;
 		12)
-			ssh -p 9999 dream@${web_virtualBox}
+			ssh   dream@${web_centos7u603}
 			;;
 		13)
-			ssh -p 10000 dream@${web_virtualBox}
+			ssh   dream@${web_centos7u604}
 			;;
 		q)
 			exit 0
