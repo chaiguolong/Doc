@@ -3,13 +3,13 @@
 	0. 先安装必要的包:执行下面的命令:
 		> 1. yum install -y gcc gcc-devel gcc-c++ gcc-c++-devel make kernel kernel-devel
 		> 2. 安装完重启虚拟机
-			shutdown -r now
+			shutdown -h now
 	1. 打开mac os => /Applications/VirtualBox.app/Contents/MacOS
 	2. 找到VBoxGuestAdditions.iso 加载到虚拟机
 		> 1. 点击设置-->存储-->控制器IDE
 		> 2. 点击左边第一个小按钮(添加虚拟光驱)
 		> 3. 选择VBoxGuestAdditions.iso
-	3. 在虚拟机当中执行(先cd 到/media,然后mkdir cdrow,最后给777权限)
+	3. 在虚拟机当中执行(先cd 到/media,然后mkdir cdrom,最后给777权限)
 		sudo mount /dev/sr0 /media/cdrom
 	4. cd /media/cdrom/ && sh ./VBoxLinuxAdditions.run
 	5. reboot虚拟机即可.

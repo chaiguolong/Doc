@@ -162,5 +162,17 @@
 	解压并进入你的源码所在目录：
 	./configure
 	sudo make uninstall
+5.rpm包的安装及一些命令:
+	常用命令组合
+		－ivh：安装显示安装进度--install--verbose--hash(在软件包安装时打上哈希标记)
+		－e：删除包
 
+	#查询程序是否安装
+	rpm -q samba 
+	#按路径安装并显示进度
+	rpm -ivh /media/cdrom/RedHat/RPMS/samba-3.0.10-1.4E.i386.rpm 
+	＃[删除一个rpm包]
+	rpm -e file.rpm --erase
+
+6.yum repolist	查看yum仓库列表中有哪些仓库.
 
