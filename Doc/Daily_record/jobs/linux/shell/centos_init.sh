@@ -2,15 +2,15 @@
 #!/bin/bash
 #
 #**************************************************
-#Author:                Xan_Yum
-#QQ:                    7993167
-#Email:                 waluna@qq.com
+#Author:                dream
+#QQ:                    584238433
+#Email:                 584238433@qq.com
 #Version:               1.0
-#Date:                  2021-11-03
+#Date:                  2024-04-23
 #FileName:              init_v1.sh
 #Description:           system init
-#URL:                   https://blog.waluna.top
-#Copyroght (C):         2021 ALL rights reserved
+#URL:                   https://blog.dream.top
+#Copyroght (C):         2024 ALL rights reserved
 #**************************************************
 
 OS=`awk -F'"' '/PRETTY_NAME/{print $2}' /etc/os-release|tr ' ' '-'`
