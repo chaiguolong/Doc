@@ -139,3 +139,28 @@
    (例如.emacs或者init.el之类的),将emacs恢复初始状态,再进行编辑,
    正确之后,再改回原来的文件名.
 
+17.	centos 8 安装emacs29.1
+	CentOS 8 默认的软件包仓库中不包括 Emacs 29.1，因此你需要从源代码编译安装。以下是安装 Emacs 29.1 的步骤：
+
+	安装必要的依赖项：
+
+	sudo dnf install -y gcc gcc-c++ libXpm-devel libjpeg-turbo-devel giflib-devel libtiff-devel ncurses-devel
+	下载 Emacs 29.1 的源代码：
+
+	wget https://ftp.gnu.org/gnu/emacs/emacs-29.1.tar.gz
+	解压源代码：
+
+	tar -zxvf emacs-29.1.tar.gz
+	进入目录：
+
+	cd emacs-29.1
+	配置构建系统：
+
+	./configure --prefix=/usr/local
+	编译和安装：
+
+	make
+	sudo make install
+	（可选）创建快捷方式：
+
+	sudo ln -s /usr/local/bin/emacs /usr/bin/emacs
