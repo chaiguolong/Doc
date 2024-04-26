@@ -223,7 +223,7 @@ EOF
     echo -e "\e[32;1mResource limits modify complete\e[0m"
 }
 
-#10
+#10设置软件源为阿里源,并安装epel源
 set_software_source () {
    
     if [[ $OS == CentOS-Linux-7* ]];then
@@ -234,6 +234,9 @@ set_software_source () {
     elif [[ $OS == CentOS-Linux-8* ]];then
         mkdir /etc/yum.repos.d/backup && mv /etc/yum.repos.d/*.repo /etc/yum.repos.d/backup
         curl -o /etc/yum.repos.d/CentOS-Base.repo https://mirrors.aliyun.com/repo/Centos-vault-8.5.2111.repo
+		yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-8.noarch.rpm
+		sed -i 's|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com|' /etc/yum.repos.d/epel*
+		sed -i 's|^metalink|#metalink|' /etc/yum.repos.d/epel*
         yum clean all && yum makecache
         yum install -y https://mirrors.aliyun.com/epel/epel-release-latest-8.noarch.rpm
         sed -i 's|^#baseurl=https://download.example/pub|baseurl=https://mirrors.aliyun.com|' /etc/yum.repos.d/epel*

@@ -1,43 +1,16 @@
-1.emacs快捷键: 
-	1).C-p: 上移一行
-	2).C-b: 左移一字符
-	3).C-f: 右移一字符
-	4).C-n: 下移一行
-	5).M-f: 右移到下个单词
-	6).M-b: 左移到上个单词
-	8).C-a: 移至行首
-	8).C-e: 移至行尾
-	9).M-a: 移至当前句首
-	10).M-e: 移至当前句尾
-	11).M-v: 上翻一屏
-	12).C-v: 下翻一屏
-	13).M-<: 移至文本的首行
-	14).M->: 移至文本的尾行
-	15).C-x C-s: 保存当前缓冲区到文件
-	16).C-z: 退出emacs并保持在这个会话中继续运行，以便你切回
-	17).C-x C-c: 退出emacs并停止该程序
-	18).M-Backspace: 剪切光标当前所在位置之前的单词
-	19).M-d: 剪切光标当前所在位置之后的单词
-	20).C-k: 剪切光标当前所在位置至行尾的文本
-	21).M-k: 剪切光标当前所在位置至句尾的文本
-	22).C-y: 粘贴剪切来的文本.
-	23).C-/: 撤销剪切命令.
-	24).C-s: 查找当前光标至缓冲区尾部的文本.
-	25).C-R: 查找当前光标至缓冲区头部的文本.
-	26).M-x: 替换已有文本.(配合文本命令: replace-string)
-	27).C-x C-f: 组合命令键将新文件加载到缓冲区.
-	28).C-x C-b: 列出工作缓冲区.
-	29).C-x o(other的意思): 切换到缓冲区列表窗口
-	30).C-x b: 输入你要切换到的缓冲区域的名字
-	31).C-x 2: 将窗口水平拆分成两个窗口
-	32).C-x 3: 将窗口竖向拆分成两个窗口
-	33).C-x o: 从一个窗口切换到另一个窗口.
-	34).C-x 0(数字0): 关闭当前窗口.
-	35).C-x 1(数字1): 关闭除当前窗口外的所有窗口.
-	36).C-c C-t: 将当前栏目切换为TODO/DONE
-	37).C-c C-s: 将agenda设置开始日期
-	38).C-c C-d: 将agenda设置结束日期
-	39).Dired(需要用m键mark相应的文件):
+1.	emacs基础快捷键: 
+	1.1).C-x C-s: 保存当前缓冲区到文件
+	1.2).C-x C-c: 退出emacs并停止该程序
+	1.3).C-/: 撤销命令.
+	1.4).C-x C-f: 组合命令键将新文件加载到缓冲区(也可用于新建文件).
+	1.5).C-x o(other的意思): 切换到缓冲区列表窗口
+	1.6).C-x b: 输入你要切换到的缓冲区域的名字
+	1.7).C-x 2: 将窗口水平拆分成两个窗口
+	1.8).C-x 3: 将窗口竖向拆分成两个窗口
+	1.9).C-x o: 从一个窗口切换到另一个窗口.
+	1.10).C-x 0(数字0): 关闭当前窗口.
+	1.11).C-x 1(数字1): 关闭除当前窗口外的所有窗口.
+	1.12).Dired(需要用m键mark相应的文件):
 				+: to create directory
 				C-x C-f: to create file
 				g: to refresh dired buffer
@@ -47,41 +20,21 @@
 				x: 执行所选的文档(是否删除)
 				D: delete after confirm
 				u: 取消标记
-	40).M-`: 进入基础文本菜单
-	41).M-g g(n): 去到文件第n行
-	41).M-g c(n): 去到文件第n个字符
-	42).重复命令M-n commmand: n是个数字(Repeat the next command n times)
-				比如M-200 c-n:就是向下移动200行
-	43).M->: 将光标移动到文件末尾(option键+shift+.)
-	44).M-<: 将光标移动到文件开始(option键+shift+,)
-	45).C-l: 重新绘制屏幕,将光标所在行移动至屏幕中间;
-			 再按一次,将光标所在的行移动至屏幕顶部;
-			 再按一次,将光标所在的行移动至屏幕底部.
-	37).c-x s: 保存多个缓冲区.
-	38).c-z: evil模式和Emacs模式切换.
-	39).c-j: 对光标之前进行取值.
-	46).c-x s: 保存多个缓冲区.
-	47).c-z: evil模式和Emacs模式切换.
-	48).c-j: 对光标之前进行取值.
-	49).C-u n: 重复下次命令n此,如果删除n,重复下次命令4次.
-	50).C-x C-x: 检查被标记的区域.
-	51).M-y: 在删除环中,粘贴比C-y早的删除片段,只能在使用了C-y或者M-y之后使用
-	52).换位: 
-				1>.C-t: 将两个字母换位:sm->ms
-				2>.M-t: 将两个单词换位:one two->two one
-				3>.C-x C-t: 将两行进行换位: one two three  --->  1  2  3
-											1  2  3        --->  one  two three
-	53).M-c(capitialize): 单词首字母大写: one --> One
-		M-l(lowercase): 转变为小写字母: ONE --> one
-		M-u(uppercase): 转变为大写字母: one --> ONE
-		如果在单词中间,上面的命令作用于光标之后,如果要作用于光标之前,
-		在上面命令之前,添加命令Meta-(按住option,敲击-,然后敲击上面的命令<M-c/M-l/M-u>)
-	54).C-x C-u:将指定区域内字符转为大写字符(通过set mark选中区域)
-	55).C-x C-v:读取另一个文件来代替刚才读入的那一个文件.
-	56).C-x i:把一个文件插入另一个文件(移动到适当的位置)
-    57).g: 在Dired模式中强制刷新.
-	58).C-j 计算最后的符号表达式(sexps<symbolic expressions>)
+				g: 在Dired模式中强制刷新.
+	1.13).C-x k: kill当前buffer
+	1.14).c-z: evil模式和Emacs模式切换.
+	1.15).emacs使配置生效:M-x eval-buffer
+	1.16).C-l: 重新绘制屏幕,将光标所在行移动至屏幕中间;
+		  再按一次,将光标所在的行移动至屏幕顶部;
+		  再按一次,将光标所在的行移动至屏幕底部.
+	1.17).C-c C-e 运行激活区域或者整个缓存区.
 
+
+
+2.	org-mode快捷键: 
+	2.1).C-c C-t: 将当前栏目切换为TODO/DONE
+	2.2).C-c C-s: 将agenda设置开始日期
+	2.3).C-c C-d: 将agenda设置结束日期
 
 2.复制粘贴:
     1).把光标移动到区域的首字符
@@ -91,76 +44,15 @@
     5).键入M-w，拷贝这个选定区域到粘贴板（剪切是C-w）
     6).用光标定位将要粘贴内容的地方，然后键入C-y ，拷贝成功。
 	备注: M-h: 标记整个段落;C-x h:标记整个buff; C-x C-p标记整个页面
+
 3.emacs内置的中文教程:打开emacs,输入快捷键c-u c-h t,然后选择Chinese-GB18030
-4.emacs使配置生效:M-x eval-buffer
-<<<<<<< HEAD
-14. 在半马人的emacs配置中添加插件evil.
-	1.在init.el文件添加文本(require 'init-evil)
-	2.新建文件lisp/init-evil.el,内容如下:
+
+4. 在半马人的emacs配置中添加插件evil.
+	1).在init.el文件添加文本(require 'init-evil)
+	2).新建文件lisp/init-evil.el,内容如下:
 		(use-package evil
 			:ensure t
 			:hook (after-init . evil-mode))
 		(provide 'init-evil)
-	3.重启emacs
-=======
-5.条件判断:
-	(cond (case1 do-when-case1)
-      (case2 do-when-case2)
-      ...
-      (t do-when-none-meet))	//注意:此语句中的t,当所有都不匹配的时候执行这条
-6.局部变量定义:
-	(let (bindings)
-		body)
-	bingdings可以是(var value)这样对var赋初始值的形式,
-	或者用var声明一个初始值为nil的变量
-	注意:定义中本身有一对括号,如果里面赋初始值,需要再
-	添一堆括号,如下:
-		(let ((res 1))
-7.可选择参数&optional (&optional name)
-8.elisp测试函数一般都是用p来结尾,p是predicate的第一个字母
-9.nil表示假,其他的值都为真,包括(0,-1)
-10.字符的读入语法实在字符前加上一个问号
-	例如: ?A   ?a
-11.可选择参数（Optional Parameter）
-	在lisp函数声明的参数中，可以使用&optional符号声明
-	在此之后的参数是选择性给出的
-12.剩余参数（Rest Parameters）
-	Lisp允许在函数参数中引入&rest符号，
-	表示在其后面的参数数量可以不限制.
-13.spacemacs 安装ivy要安装在helm之下.
-14.spacemacs快捷键:
-	1. SPC f e d: 编辑spacemacs中的init.el
-	2. SPC f j: 进入当前文件的Dired模式
-	3. SPC q q: 退出emacs
-	4. SPC f e R: 重新加载配置文件
-15. overwrite-mode: (M-x overwrite-mode Enter)-->在原有文本上面输入字符会覆盖原有的文本
-					使用结束后(M-x ov Enter)<保证选项中唯一的选择是overwrite-mode>-->结束overwrite-mode.
-16.当emacs因为配置文件太混乱而无法打开和编辑时,可以重命名配置文件
-   (例如.emacs或者init.el之类的),将emacs恢复初始状态,再进行编辑,
-   正确之后,再改回原来的文件名.
+	3).重启emacs
 
-17.	centos 8 安装emacs29.1
-	CentOS 8 默认的软件包仓库中不包括 Emacs 29.1，因此你需要从源代码编译安装。以下是安装 Emacs 29.1 的步骤：
-
-	安装必要的依赖项：
-
-	sudo dnf install -y gcc gcc-c++ libXpm-devel libjpeg-turbo-devel giflib-devel libtiff-devel ncurses-devel
-	下载 Emacs 29.1 的源代码：
-
-	wget https://ftp.gnu.org/gnu/emacs/emacs-29.1.tar.gz
-	解压源代码：
-
-	tar -zxvf emacs-29.1.tar.gz
-	进入目录：
-
-	cd emacs-29.1
-	配置构建系统：
-
-	./configure --prefix=/usr/local
-	编译和安装：
-
-	make
-	sudo make install
-	（可选）创建快捷方式：
-
-	sudo ln -s /usr/local/bin/emacs /usr/bin/emacs
