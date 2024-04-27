@@ -61,7 +61,7 @@
 	2.敲入h键,选择hugo post模板.
 	3.书写博客的标题.
 	4.在org-mode模式下书写博客内容,完成敲入C-c C-c
-	5.通过快捷键C-x C-f,找到/Users/develop/blog内的all-blog.org,
-	稍做改动(触发程序将org文件转为md文件)并保存.
+	5.通过快捷键C-x C-f,找到/Users/develop/blog内的all-blog.org,按快捷键C-c C-t将todo改为done;
+	然后保存文件并自动转为md格式
 	6.通过git,将文件上传至github.
 	
