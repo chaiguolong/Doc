@@ -1,11 +1,31 @@
 1.如何创建新的git仓库,创建新的Git仓库可以通过以下步骤进行：
 	0).设置用户信息:
 
-		安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 
-		git config --global user.name "chaiguolong"
-		git config --global user.email 584238433@qq.com
+		0.1).配置用户名和邮箱
+			安装完 Git 之后，要做的第一件事就是设置你的用户名和邮件地址。 
+			git config --global user.name "chaiguolong"
+			git config --global user.email 584238433@qq.com
 
-		git config --list 查看config配置
+			git config --list 查看config配置
+	
+		0.2).生成SSH key
+			进入.ssh文件夹:
+			cd ~/.ssh/
+
+			生成秘钥:
+			ssh-keygen -t rsa -C "chaiguolong1@gmail.com"
+
+			获取SSH Key:
+			根据命令行提示,获取以ssh-rsa的字符串(包括ssh-rsa)
+			按键"回车键" 生成了SSH Key(密钥)
+
+		0.3).SSH key生成的路径一般为~/.ssh/下,打开id_rsa.pub,进行全选复制内容.
+
+		0.4).登录github账号添加SSH Key(将第三部的内容粘贴上去):
+			settings-->SSH and GPG keys-->new SSH key
+	
+		0.5).检测是否添加成功(本地终端输入下列内容,然后输入yes就好了)
+			ssh -T git@github.com
 
 	1).在你想创建仓库的目录中打开终端。
 
@@ -128,6 +148,22 @@
 						
 	13).git revert撤销某次操作
 		此次操作之前和之后的commit和history都会保留,并且把这次撤销作为一次最新的提交
+
+	14).以下列出了远程仓库、添加远程仓库、重命名远程仓库、删除远程仓库、修改远程仓库 URL 和查看远程仓库信息的用法：
+
+		14.1).列出远程仓库
+			git remote
+			git remote -v
+		14.2).添加远程仓库
+			git remote add origin https://github.com/user/repo.git
+		14.3).重命名远程仓库
+			git remote rename origin new-origin
+		14.4).删除远程仓库
+			git remote remove new-origin
+		14.5).修改远程仓库
+			git remote set-url origin https://github.com/user/new-repo.git
+		14.6).查看远程仓库信息
+			git remote show origin
 	
 
 3.Fugitive.vim的使用流程.
@@ -141,7 +177,7 @@
 	3).Gpull拉取文件,保持一致性
 	4).Gpush推送文件到服务器
 
-4.git每次push都要输入账号密码
+4.git每次push都要输入账号密码(貌似是因为没有配置ssh key,具体参考开头的教程)
 	git config --global credential.helper store
 	git pull /git push (这里需要输入用户名和密码，以后就不用啦)
 
@@ -174,3 +210,7 @@
 		git reset --hard commit_sha 回滚到指定commit的sha码，推荐使用这种方式.
 	7.2).强行提交到远程仓库.
 		git push origin HEAD --force
+
+8.git add . 和git add * 区别
+	git add . 会把本地所有untrack的文件都加入暂存区,
+	并且会根据.gitignore做过滤,但是git add * 会忽略.gitignore把任何文件都加入

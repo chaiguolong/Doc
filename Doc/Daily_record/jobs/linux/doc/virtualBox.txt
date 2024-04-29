@@ -119,3 +119,12 @@
 			
 
 		
+4.本地浏览器访问虚拟机的hugo服务
+	1.方法一:
+		服务器用hugo server不带参数启动服务
+		用ssh登录,加一下参数-L 1313:localhost:1313
+		然后本地浏览器直接访问http://localhost:1313
+		ssh -L 1313:localhost:1313 dream@192.168.0.105
+	2.方法二:
+		在服务端bolog启动服务时候运行下列命令
+		hugo server --bind 192.168.0.105 -b 192.168.0.105
