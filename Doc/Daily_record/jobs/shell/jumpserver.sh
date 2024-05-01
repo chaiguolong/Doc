@@ -21,10 +21,13 @@ web_07=10.10.10.27
 web_08=10.10.10.28
 web_virtualBox=127.0.0.1
 #下列虚拟机采用的是桥接模式,主机必须连上外网,且虚拟机和主机的ip需在同一网段
+web_centos8u205=192.168.0.105
+web_centos8u206=192.168.0.106
 web_centos7u601=192.168.0.201
 web_centos7u602=192.168.0.202
 web_centos7u603=192.168.0.203
 web_centos7u604=192.168.0.204
+web_centos7u605=192.168.0.205
 
 while true; do
 	clear
@@ -39,11 +42,13 @@ while true; do
 	|           6.本地虚拟机centos_02     |
 	|           7.本地虚拟机centos_03     |
 	|           8.本地虚拟机centos_04     |
-	|           9.本地虚拟机centos_05     |
-	|           10.本地虚拟机centos7u601  |
-	|           11.本地虚拟机centos7u602  |
-	|           12.本地虚拟机centos7u603  |
-	|           13.本地虚拟机centos7u604  |
+	|           9.本地虚拟机centos8u2_05  |
+	|           10.本地虚拟机centos8u2_06 |
+	|           11.本地虚拟机centos7u601  |
+	|           12.本地虚拟机centos7u602  |
+	|           13.本地虚拟机centos7u603  |
+	|           14.本地虚拟机centos7u604  |
+	|           15.本地虚拟机centos7u605  |
 	|           q.退出                    |
 	+-------------------------------------+
 
@@ -80,19 +85,27 @@ while true; do
 			ssh -p 5555 dream@${web_virtualBox}
 			;;
 		9)
-			ssh -p 6666 dream@${web_virtualBox}
+			ssh   dream@${web_centos8u205}
+			
 			;;
 		10)
-			ssh   dream@${web_centos7u601}
+			ssh   dream@${web_centos8u206}
+			
 			;;
 		11)
-			ssh   dream@${web_centos7u602}
+			ssh   dream@${web_centos7u601}
 			;;
 		12)
-			ssh   dream@${web_centos7u603}
+			ssh   dream@${web_centos7u602}
 			;;
 		13)
+			ssh   dream@${web_centos7u603}
+			;;
+		14)
 			ssh   dream@${web_centos7u604}
+			;;
+		15)
+			ssh   dream@${web_centos7u605}
 			;;
 		q)
 			exit 0
