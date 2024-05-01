@@ -214,3 +214,8 @@
 8.git add . 和git add * 区别
 	git add . 会把本地所有untrack的文件都加入暂存区,
 	并且会根据.gitignore做过滤,但是git add * 会忽略.gitignore把任何文件都加入
+
+9.如果您想要用 Git 远程覆盖本地某个文件，可以使用以下命令：
+	git fetch --all
+	git checkout --force origin/master -- path/to/file
+	其中 origin/master 是远程分支的名称，path/to/file 是您要覆盖的本地文件的路径。
